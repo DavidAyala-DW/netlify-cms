@@ -52,7 +52,7 @@ const Navbar = () => {
                 href={process.env.NEXT_PUBLIC_NAVBAR_WALLET_LINK} 
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-6 transition min-w-[160px] hover:scale-105 cursor-pointer bg-primary py-[11px] text-center uppercase text-secondary text-[12px] font-semibold"
+                className="px-6 buttonShape transition min-w-[160px] hover:scale-105 cursor-pointer bg-primary py-[11px] text-center uppercase text-secondary text-[12px] font-semibold"
               >
                 {process.env.NEXT_PUBLIC_NAVBAR_WALLET_TEXT}
               </a>
@@ -69,7 +69,7 @@ const Navbar = () => {
                 href={process.env.NEXT_PUBLIC_NAVBAR_WALLET_LINK} 
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-6 transition hover:scale-105 cursor-pointer bg-primary py-2.5 text-center uppercase text-secondary text-[12px] font-semibold"
+                className="px-6 buttonShape transition hover:scale-105 cursor-pointer bg-primary py-2.5 text-center uppercase text-secondary text-[12px] font-semibold"
                 >
                   {process.env.NEXT_PUBLIC_NAVBAR_WALLET_TEXT}
               </a>

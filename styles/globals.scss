@@ -3,6 +3,7 @@
   --color-secondary: ""
   --standard-mode:""
   --standard-original:""
+  --headline-local: ""
 }
 
 @tailwind base;
@@ -17,9 +18,9 @@ html {
 
 body {
   font-weight: 400;
-  font-family: $bodyFontLocal;
-  background-color: standardModeBG();
-  color: standardModeText();
+  // font-family: $bodyFontLocal;
+  // background-color: standardModeBG();
+  // color: standardModeText();
 }
 
 .liveActionColor{
@@ -34,28 +35,29 @@ body {
   background-color: liveActionColor();
 }
 .buttonShape{
-  border-radius: buttonShape();
+  // border-radius: buttonShape();
 }
-.bg-NavBar{
-  background-color: standardModeBG();
-}
+// .bg-NavBar{
+//   // background-color: standardModeBG();
+// }
 
-.bg_contact_footer{
-  background-color: bg_contact();
-}
-.filter_logo_footer{
-  filter: filterLogoBitski_footer();
-}
+// .bg_contact_footer{
+//   // background-color: bg_contact();
+// }
+// .filter_logo_footer{
+//   filter: filterLogoBitski_footer();
+// }
 
-h1,h2,h3,h4,h5{
-  font-family: $headlineFontLocal;
-}
+// h1,h2,h3,h4,h5{
+//   font-family: $headlineFontLocal;
+// }
 
-@include fontFamily($headlineFontLocal,$bodyFontLocal,$headlineFontGoogleURL,$headlineFontGoogleFont,$bodyFontGoogleURL,$bodyFontGoogleFont);
+// @include fontFamily($headlineFontLocal,$bodyFontLocal,$headlineFontGoogleURL,$headlineFontGoogleFont,$bodyFontGoogleURL,$bodyFontGoogleFont);
+// @include getFontHeadline($headlineFontLocal);
 
-body{
-  background-color: backgroundColor();
-}
+// body{
+//   background-color: backgroundColor();
+// }
 
 .logo{
   filter: filterLogo();

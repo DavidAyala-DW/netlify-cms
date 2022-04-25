@@ -1,19 +1,23 @@
 import Head from "next/head";
 import Hero from "../components/Hero";
 import Grid from "../components/Grid";
-import {useEffect} from "react";
+import {useEffect, useState} from "react";
 import { assignColors } from "../helpers";
 import Contact from "../components/Contact";
 import Main from "../components/Main";
 import About from "../components/About";
 import Carousel from "../components/Carousel";
 
-
 const Home = ({featuredProduct,products}) => {
 
+  // const [fontNames,setFontNames] = useState(null);
+  // const [fontNamesActive,setFontNamesActive] = useState(false);
+
   useEffect(() => {
+    // setFontNamesActive(true);
+    // setFontNames();
     assignColors();
-  }, [products]);
+  }, []);
 
   return (
     <>
@@ -37,15 +41,6 @@ const Home = ({featuredProduct,products}) => {
   );
 
 };
-// export const getStaticProps = async (ctx) => {
-
-
-//   return {
-//     props:{
-//       data:null
-//     }
-//   }
-// }
 
 export const getServerSideProps = async () => {
 
