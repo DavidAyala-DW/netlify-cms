@@ -9,8 +9,7 @@ const footerImage = "/" + process.env.NEXT_PUBLIC_MAIN_IMAGE;
 const title = process.env.NEXT_PUBLIC_CONTACT_TITLE ?? "";
 const description = process.env.NEXT_PUBLIC_CONTACT_DESCRIPTION ?? "";
 
-function Contact() {
-
+function Contact({content}) {
   return (
 
     <section className='px-4 md:px-0 pt-2 pb-10 lg:pb-[180px] mx-auto w-full h-full lg:min-h-full relative overflow-hidden flex flex-col items-center bg-standardO '>
@@ -22,11 +21,10 @@ function Contact() {
 
           <div className="w-full flex max-w-max mx-auto items-center space-x-9 md:space-x-[45px]">
 
-            { arraySocialMedia.map( (child,index) => {
+            { arraySocialMedia(content).map( (child,index) => {
 
               const {Icon,URL} = child;
-              
-              if(URL != ""){
+              if(URL){
                 
                 return(
 

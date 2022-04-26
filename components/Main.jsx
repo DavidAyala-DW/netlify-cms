@@ -6,32 +6,37 @@ const topText = process.env.NEXT_PUBLIC_MAIN_TOP_TEXT ?? "";
 const headline = process.env.NEXT_PUBLIC_MAIN_HEADLINE ?? "";
 const description = process.env.NEXT_PUBLIC_MAIN_DESCRIPTION ?? "";
 
-function Main({featuredProduct}) {
+function Main({featuredProduct,content}) {
 
   const [product, setProduct] = useState(featuredProduct)
 
   useEffect(() => {
 
-    async function featuredProduct(){
+    async function featuredProduct(id){
 
       try {
-        const endpoint = process.env.NEXT_PUBLIC_API_KEY;
-        const res = await fetch(endpoint.toString().concat(`/${process.env.NEXT_PUBLIC_MAIN_FEATURED_PRODUCT ?? "2096389b-aa71-4f03-9cd0-242d6050e964" }`));
+  
+        const res = await fetch(endpoint.toString().concat(`/${id}`));
         const response = await res.json();
-        const {product:featured_product} = response;
-        return featured_product; 
-
+        const {error} = response;
+        if(error){
+          return {};
+        }else{
+          const {product:featured_product} = response;
+          return featured_product;      
+        }
+  
       } catch (error) {
-        return {};
+          return {};
       }
-
+  
     }
 
     if(Object.keys(featuredProduct).length > 0){
       
       const interval = setInterval(() => {
 
-        const product = featuredProduct();
+        const product = featuredProduct(content.main_featured_product);
         setProduct(product);
   
       },120*1000)
@@ -40,7 +45,7 @@ function Main({featuredProduct}) {
 
     }
 
-  },[])
+  },[content])
 
 
   return (
@@ -60,7 +65,7 @@ function Main({featuredProduct}) {
         {
           
           Object.keys(featuredProduct).length == 0 && (
-            <FakeFeaturedProduct />
+            <FakeFeaturedProduct content={content} />
           )
 
         }

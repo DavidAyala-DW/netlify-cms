@@ -13,7 +13,7 @@ import CustomProductViewer from './CustomProductViewer';
 const textImages = process.env.NEXT_PUBLIC_CAROUSEL_ARRAY_IMAGES ?? "";
 const arrayImages = textImages.split(",");
 
-function Carousel() {
+function Carousel({content}) {
 
   return (
 
@@ -67,25 +67,11 @@ function Carousel() {
 
           {
 
-            arrayImages.map((item) => {
+            content.map((item) => {
               
-              if(item.length > 0){
+              if(Object.keys(item).length > 0){
                 
-                if (!String.prototype.replaceAll) {
-                  String.prototype.replaceAll = function(str, newStr){
-                
-                    // If a regex pattern
-                    if (Object.prototype.toString.call(str).toLowerCase() === '[object regexp]') {
-                      return this.replace(str, newStr);
-                    }
-                
-                    // If a string
-                    return this.replace(new RegExp(str, 'g'), newStr);
-                
-                  };
-                }
-
-                const image = item.toString().trim().replaceAll("'","").replaceAll('"',"");
+                const image = item.gallery_image;
 
                 return (
                   
@@ -112,14 +98,14 @@ function Carousel() {
                           </div>
 
                         </div>
-                        // <CustomProductViewer product={item}/>
+                        
                       )
                     }
                   </SwiperSlide>
                   
                 )
               }else{
-                console.log(`The id ${item.id} doesn't exists or is wrong`);
+                console.log(`The image with filename "${item.gallery_image}" doesn't exists or is wrong`);
               }
 
             })

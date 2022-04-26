@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from "next/image";
 
-function FakeFeaturedProduct() {
+function FakeFeaturedProduct({content}) {
 
   const image =  "/".concat(process.env.NEXT_PUBLIC_MAIN_FAKE_FEATURED_PRODUCT_IMAGE) ?? "";
   const saleType = process.env.NEXT_PUBLIC_MAIN_FAKE_FEATURED_PRODUCT_SALETYPE ?? "";
@@ -21,8 +21,8 @@ function FakeFeaturedProduct() {
             <div className='w-full h-full '>
               <Image
                 className='object-cover h-full w-full object-center rounded-xl'
-                src={image}
-                alt={image}
+                src={"/"+content.main_placeholder_image}
+                alt={content.main_placeholder_image}
                 layout="responsive"
                 height={608}
                 width={608}
@@ -42,11 +42,11 @@ function FakeFeaturedProduct() {
         <div className={`flex w-full items-center py-2 justify-between border-standard liveActionColor  rounded-lg my-5 border-2 px-2 space-x-2`}>
 
           <p className='flex text-xs font-black leading-[14.4px] items-center'>
-            {saleType}
+            {content.main_placeholder_saletype}
           </p>
 
           <p className="text-xs font-medium leading-[14.4px] text-right">
-            {status}
+            {content.main_placeholder_status}
           </p>
 
         </div>
@@ -54,11 +54,11 @@ function FakeFeaturedProduct() {
         <div className='w-full flex flex-col space-y-5 items-start'>
 
           <h2 className="text-lg leading-[21px] font-medium uppercase"> 
-            {title}
+            {content.main_placeholder_title}
           </h2>
 
           <p className='font-medium text-lg leading-[22px]'>
-            ${price}
+            ${content.main_placeholder_price}
           </p>
 
         </div>

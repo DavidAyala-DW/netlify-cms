@@ -40,7 +40,7 @@ const Home = ({featuredProduct,content}) => {
       
       <Carousel content={content.gallery}/>
 
-      <Contact contact={content.contact} />
+      <Contact content={content.contact} />
       
     </>
   );

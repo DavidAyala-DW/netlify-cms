@@ -13,7 +13,7 @@ const logoFileName = "/".concat(process.env.NEXT_PUBLIC_NAVBAR_LOGO);
 const cta_text = process.env.NEXT_PUBLIC_HERO_CTA_TEXT ?? "";
 const cta_link = process.env.NEXT_PUBLIC_HERO_CTA_LINK ?? "/";
 
-const Hero = () => {
+const Hero = ({content}) => {
 
 
   const [height, setHeight] = useState(0);
@@ -23,11 +23,11 @@ const Hero = () => {
 
   useEffect(() => {
 
-    if(logoFileName != "/undefined"){
+    if(content.hero_logo != "/undefined"){
       
       const image = document.createElement("IMG");
       image.classList.add("w-full","h-full");
-      image.src = logoFileName;
+      image.src = "/"+content.hero_logo;
       image.onload = () => {
         setHeight(image.height);
         setWidth(image.width);
@@ -44,7 +44,7 @@ const Hero = () => {
       }
     }
 
-  }, []);
+  }, [content]);
 
   useEffect(() => {
 
@@ -128,11 +128,11 @@ const Hero = () => {
           </div>
 
             <h1 className="max-w-[955px] font-black px-1 md:px-0 w-full text-[52px] leading-[100%] md:text-[64px] md:leading-[64px] text-center mb-7">
-              {title}
+              {content.hero_title}
             </h1>
 
             <p className="max-w-[641px] font-medium w-full text-center text-base leading-[160%] md:leading-[25px] ">
-              {description}
+              {content.hero_description}
             </p>
 
         </div>

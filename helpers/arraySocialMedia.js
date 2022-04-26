@@ -5,34 +5,36 @@ import Tiktok from "../public/tiktok.svg";
 import Telegram from "../public/telegram.svg";
 import Reddit from "../public/reddit.svg";
 
-export const arraySocialMedia = [
+export function arraySocialMedia(obj) {
+  return [
+    {
+      Icon: Twitter,
+      URL: obj.contact_twitter
+    },
+  
+    {
+      Icon: Instagram,
+      URL: obj.contact_instagram
+    },
+  
+    {
+      Icon: Discord,
+      URL: obj.contact_discord
+    },
+    {
+      Icon: Tiktok,
+      URL: obj.contact_tiktok
+    },
+    {
+      Icon: Telegram,
+      URL: obj.contact_telegram
+    },
+  
+    {
+      Icon: Reddit,
+      URL: obj.contact_reddit
+    }
 
-  {
-    Icon: Twitter,
-    URL: process.env.NEXT_PUBLIC_TWITTER_LINK
-  },
+  ]
+}
 
-  {
-    Icon: Instagram,
-    URL: process.env.NEXT_PUBLIC_INSTAGRAM_LINK
-  },
-
-  {
-    Icon: Discord,
-    URL: process.env.NEXT_PUBLIC_DISCORD_LINK
-  },
-  {
-    Icon: Tiktok,
-    URL: process.env.NEXT_PUBLIC_TIKTOK_LINK
-  },
-  {
-    Icon: Telegram,
-    URL: process.env.NEXT_PUBLIC_TELEGRAM_LINK
-  },
-
-  {
-    Icon: Reddit,
-    URL: process.env.NEXT_PUBLIC_REDDIT_LINK
-  }
-
-]
