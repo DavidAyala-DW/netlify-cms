@@ -94,7 +94,8 @@ export const getServerSideProps  = async () => {
   }else{
     return {
       props: {
-        featuredProduct: {}
+        featuredProduct: {},
+        content: {}
       },
     };
   }
