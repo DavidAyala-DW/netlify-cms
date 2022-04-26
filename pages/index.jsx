@@ -67,10 +67,11 @@ export const getStaticProps = async () => {
     }
 
   }
-
-  const req = await fetch("../content/settings.json");
-  const res = await req.json();
-  console.log(res);
+  // const dev = process.env.NODE_ENV !== 'production';
+  // const server = dev ? 'http://localhost:3000' : 'https://bitski-netlify-cms.netlify.app';
+  // const req = await fetch(server + "/content/settings.json");
+  // const res = await req.json();
+  // console.log(res);
     
   if(process.env.NEXT_PUBLIC_MAIN_FEATURED_PRODUCT){
 
