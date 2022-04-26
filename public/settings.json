@@ -1,0 +1,56 @@
+{
+  "site_title": "PWRFWD | Charter Jacket NFT | All in on Women's Hoops",
+  "site_icon": "img/favicon-32x32-1.png",
+  "navbar": {
+    "navbar_wallet_link": "https://www.bitski.com/",
+    "navbar_wallet_text": "Log in"
+  },
+  "hero": {
+    "hero_title": "CHARTER CLUB JACKET",
+    "hero_description": "Join our community of athletes, fans, and industry leaders and let's go all in on  women's hoops.",
+    "hero_logo": "img/pwrfwd_logo_web_wht.png"
+  },
+  "main": {
+    "main_featured_product": "93805ee5-6b26-4bb3-9c33-14cdaa72a5f0",
+    "main_placeholder_image": "img/image-8.png",
+    "main_placeholder_price": 420,
+    "main_placeholder_title": "Under The Lights",
+    "main_placeholder_status": "3d Left",
+    "main_placeholder_saletype": "Auction"
+  },
+  "about": {
+    "about_title": "GET YOURS2",
+    "about_description": "Premium art. Purposeful benefits. Powerful community. Limited edition. 1,000 available. Holders get:"
+  },
+  "gallery": [
+    {
+      "gallery_image": "img/1.png"
+    },
+    {
+      "gallery_image": "img/2.png"
+    },
+    {
+      "gallery_image": "img/3.png"
+    },
+    {
+      "gallery_image": "img/4.png"
+    },
+    {
+      "gallery_image": "img/5.png"
+    },
+    {
+      "gallery_image": "img/6.png"
+    },
+    {
+      "gallery_image": "img/7.png"
+    },
+    {
+      "gallery_image": "img/8.png"
+    }
+  ],
+  "contact": {
+    "contact_twitter": "https://twitter.com/PWRFWDteam",
+    "contact_instagram": "https://www.instagram.com/pwrfwdteam/",
+    "contact_discord": "https://discord.gg/a7A8GeDGR7"
+  }
+}
