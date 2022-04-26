@@ -3,9 +3,9 @@
     "contact_twitter": "https://twitter.com/PWRFWDteam",
     "contact_instagram": "https://www.instagram.com/pwrfwdteam/",
     "contact_discord": "https://discord.gg/a7A8GeDGR7",
-    "contact_tiktok": "/",
-    "contact_telegram": "/",
-    "contact_reddit": "/"
+    "contact_tiktok": "",
+    "contact_telegram": "",
+    "contact_reddit": ""
   },
   "site_title": "PWRFWD | Charter Jacket NFT | All in on Women's Hoops",
   "appearance": "dark",
@@ -63,7 +63,12 @@
   "button_shape": "full",
   "secondary_color": "black",
   "main": {
-    "main_featured_product": "d483dffe-e177-43a1-b650-b503e6acd5aa"
+    "main_featured_product": "93805ee5-6b26-4bb3-9c33-14cdaa72a5f0",
+    "main_placeholder_image": "img/image-8.png",
+    "main_placeholder_saletype": "Auction",
+    "main_placeholder_status": "3d Left",
+    "main_placeholder_title": "Under The Lights",
+    "main_placeholder_price": 418
   },
   "hero": {
     "hero_title": "CHARTER CLUB JACKET",
