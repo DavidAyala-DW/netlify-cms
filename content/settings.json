@@ -29,8 +29,8 @@
       "fontFamily_headline": "'Manrope', sans-serif"
     },
     "external_body": {
-      "url_body": "https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap",
-      "fontFamily_body": "'Manrope', sans-serif"
+      "url_body": "",
+      "fontFamily_body": ""
     }
   },
   "site_icon": "img/favicon-32x32-1.png",
