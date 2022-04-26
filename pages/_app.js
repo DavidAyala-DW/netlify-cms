@@ -12,4 +12,18 @@ function MyApp({ Component, pageProps }) {
   )
 }
 
-export default MyApp
+
+export const getStaticProps = async (ctx) => {
+
+  const req = await fetch("../content/settings.json");
+  const res = await req.json();
+  console.log(res);
+
+  return {
+    props:{
+      data:null
+    }
+  }
+}
+
+export default MyApp;

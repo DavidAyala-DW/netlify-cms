@@ -14,32 +14,6 @@ collections:
         fields: 
           - {label: "Site Title", name: "site_title", widget: "string"}
           - {label: "Site Icon", name: "site_icon", widget: "image"}
-          - {label: "Appearance", name: "appearance", widget: "select", options: ["dark", "light"]}
-          - {label: "Primary Color", name: "primary_color", widget: "string", hint: "list colors, css or hex color"}
-          - {label: "Secondary Color", name: "secondary_color", widget: "select", options: ["white", "black"], default: "white" ,  hint: "list colors, css or hex color"}
-          - label: "Local Fonts"
-            name: "local_fonts"
-            widget: "object"
-            fields: 
-              - {label: "Headline", name: "local_headline", widget: "select", options: ["Interstate","NeueMachina","Matter SQ","Pangram Sans","Eiko","Acherus"], required: false }
-              - {label: "Body", name: "local_body", widget: "select", options: ["Interstate","NeueMachina","Matter SQ","Pangram Sans","Eiko","Acherus"], required: false }
-          - label: "External Fonts"
-            name: "external_fonts"
-            widget: "object"
-            fields: 
-              - label: "Headline"
-                name: "external_headline"
-                widget: "object"
-                fields:
-                  - {label: "URL", name: "url_headline", widget: "string", required: false}
-                  - {label: "Font family", name: "fontFamily_headline", widget: "string", required: false}
-              - label: "Body"
-                name: "external_body"
-                widget: "object"
-                fields:
-                  - {label: "URL", name: "url_body", widget: "string", required: false}
-                  - {label: "Font family", name: "fontFamily_body", widget: "string", required: false}
-          - {label: "Button Shape", name: "button_shape", widget: "select", options: ["none","smooth","full"]}
           - label: "NavBar"
             name: "navbar"
             widget: "object"
@@ -53,11 +27,17 @@ collections:
             fields: 
               - {label: "Hero Title", name: "hero_title", widget: "string"}
               - {label: "Hero Description", name: "hero_description", widget: "string"}
-          - label: "Main Section (Featured Product)"
+          - label: "Main Section (Featured Product - NFT)"
             name: "main"
             widget: "object"
             fields: 
               - {label: "Featured Product (ID)", name: "main_featured_product", widget: "string"}
+              - {label: "Placeholder Image", name: "main_placeholder_image", widget: "image"}
+              - {label: "Placeholder SaleType", name: "main_placeholder_saletype", widget: "string"}
+              - {label: "Placeholder Status", name: "main_placeholder_status", widget: "string"}
+              - {label: "Placeholder Title", name: "main_placeholder_title", widget: "string"}
+              - {label: "Placeholder Price", name: "main_placeholder_price", widget: "number"}
+
           - label: "About Drop Section"
             name: "about"
             widget: "object"
