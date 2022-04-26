@@ -4,24 +4,6 @@ backend:
 media_folder: public/img
 public_folder: img
 collections:
-  - name: "content2"
-    label: "Content2"
-    files:
-    - label: "Home"
-      name: "home"
-      file: "content/home.json"
-      fields:
-        - { label: "Title", name: "title", widget: "string"}
-        - { label: "Publish Date", name: "date", widget: "datetime" }
-        - { label: "Body", name: "body", widget: "markdown"}
-        - label: 'Cats'
-          name: "cats"
-          widget: list
-          fields:
-            - { label: "Name", name: "name", widget: "string"}
-            - { label: "Description", name: "description", widget: "text"}
-
-
   - name: "settings"
     label: "Site Settings"
     files: 
@@ -39,8 +21,8 @@ collections:
             name: "local_fonts"
             widget: "object"
             fields: 
-              - {label: "Headline", name: "local_headline", widget: "select", options: ["Interstate","NeueMachina","Matter SQ","Pangram Sans","Eiko","Acherus"] }
-              - {label: "Body", name: "local_body", widget: "select", options: ["Interstate","NeueMachina","Matter SQ","Pangram Sans","Eiko","Acherus"] }
+              - {label: "Headline", name: "local_headline", widget: "select", options: ["Interstate","NeueMachina","Matter SQ","Pangram Sans","Eiko","Acherus"], required: false }
+              - {label: "Body", name: "local_body", widget: "select", options: ["Interstate","NeueMachina","Matter SQ","Pangram Sans","Eiko","Acherus"], required: false }
           - label: "External Fonts"
             name: "external_fonts"
             widget: "object"
@@ -49,14 +31,14 @@ collections:
                 name: "external_headline"
                 widget: "object"
                 fields:
-                  - {label: "URL", name: "url_headline", widget: "string"}
-                  - {label: "Font family", name: "fontFamily_headline", widget: "string"}
+                  - {label: "URL", name: "url_headline", widget: "string", required: false}
+                  - {label: "Font family", name: "fontFamily_headline", widget: "string", required: false}
               - label: "Body"
                 name: "external_body"
                 widget: "object"
                 fields:
-                  - {label: "URL", name: "url_body", widget: "string"}
-                  - {label: "Font family", name: "fontFamily_body", widget: "string"}
+                  - {label: "URL", name: "url_body", widget: "string", required: false}
+                  - {label: "Font family", name: "fontFamily_body", widget: "string", required: false}
           - {label: "Button Shape", name: "button_shape", widget: "select", options: ["none","smooth","full"]}
           - label: "NavBar"
             name: "navbar"
@@ -91,27 +73,13 @@ collections:
             name: "contact"
             widget: "object"
             fields:
-              - {label: "Twitter Link", name: "contact_twitter", widget: "string" }
-              - {label: "Instagram Link", name: "contact_instagram", widget: "string" }
-              - {label: "Discord Link", name: "contact_discord", widget: "string" }
-              - {label: "Tiktok Link", name: "contact_tiktok", widget: "string" }
-              - {label: "Telegram Link", name: "contact_telegram", widget: "string" }
-              - {label: "Reddit Link", name: "contact_reddit", widget: "string" }
+              - {label: "Twitter Link", name: "contact_twitter", widget: "string", required: false }
+              - {label: "Instagram Link", name: "contact_instagram", widget: "string", required: false }
+              - {label: "Discord Link", name: "contact_discord", widget: "string", required: false }
+              - {label: "Tiktok Link", name: "contact_tiktok", widget: "string", required: false }
+              - {label: "Telegram Link", name: "contact_telegram", widget: "string", required: false }
+              - {label: "Reddit Link", name: "contact_reddit", widget: "string", required: false }
 
-          
-          
-
-  - name: "content"
-    label: "Content"
-    format: "json"
-    extension: "json"
-    folder: "content"
-    create: true
-    fields:
-      - { label: "Title", name: "n", widget: "string"}
-      - { label: "Label", name: "label", widget: "text", hint: "please add favicon" }
-
-        
 
 
       
