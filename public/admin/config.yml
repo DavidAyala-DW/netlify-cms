@@ -1,5 +1,5 @@
 backend:
-  name: git-gateway
+  name: test-repo
   branch: main # Branch to update (optional; defaults to master)
 media_folder: public/img
 public_folder: img
@@ -21,14 +21,98 @@ collections:
             - { label: "Name", name: "name", widget: "string"}
             - { label: "Description", name: "description", widget: "text"}
 
+
+  - name: "settings"
+    label: "Site Settings"
+    files: 
+      - label: "Site Settings"
+        name: "settings"        
+        extension: "json"
+        file: "content/settings.json"        
+        fields: 
+          - {label: "Site Title", name: "site_title", widget: "string"}
+          - {label: "Site Icon", name: "site_icon", widget: "image"}
+          - {label: "Appearance", name: "appearance", widget: "select", options: ["dark", "light"]}
+          - {label: "Primary Color", name: "primary_color", widget: "string", hint: "list colors, css or hex color"}
+          - {label: "Secondary Color", name: "secondary_color", widget: "select", options: ["white", "black"], default: "white" ,  hint: "list colors, css or hex color"}
+          - label: "Local Fonts"
+            name: "local_fonts"
+            widget: "object"
+            fields: 
+              - {label: "Headline", name: "local_headline", widget: "select", options: ["Interstate","NeueMachina","Matter SQ","Pangram Sans","Eiko","Acherus"] }
+              - {label: "Body", name: "local_body", widget: "select", options: ["Interstate","NeueMachina","Matter SQ","Pangram Sans","Eiko","Acherus"] }
+          - label: "External Fonts"
+            name: "external_fonts"
+            widget: "object"
+            fields: 
+              - label: "Headline"
+                name: "external_headline"
+                widget: "object"
+                fields:
+                  - {label: "URL", name: "url_headline", widget: "string"}
+                  - {label: "Font family", name: "fontFamily_headline", widget: "string"}
+              - label: "Body"
+                name: "external_body"
+                widget: "object"
+                fields:
+                  - {label: "URL", name: "url_body", widget: "string"}
+                  - {label: "Font family", name: "fontFamily_body", widget: "string"}
+          - {label: "Button Shape", name: "button_shape", widget: "select", options: ["none","smooth","full"]}
+          - label: "NavBar"
+            name: "navbar"
+            widget: "object"
+            fields: 
+              - {label: "Wallet Link", name: "navbar_wallet_link", widget: "string"}
+              - {label: "Wallet Text", name: "navbar_wallet_text", widget: "string"}
+              - {label: "Logo", name: "navbar_logo", widget: "image"}
+          - label: "Hero"
+            name: "hero"
+            widget: "object"
+            fields: 
+              - {label: "Hero Title", name: "hero_title", widget: "string"}
+              - {label: "Hero Description", name: "hero_description", widget: "string"}
+          - label: "Main Section (Featured Product)"
+            name: "main"
+            widget: "object"
+            fields: 
+              - {label: "Featured Product (ID)", name: "main_featured_product", widget: "string"}
+          - label: "About Drop Section"
+            name: "about"
+            widget: "object"
+            fields: 
+              - {label: "About Title", name: "about_title", widget: "string"}
+              - {label: "About Description", name: "about_description", widget: "string"}
+          - label: "Gallery Drop Section"
+            name: "gallery"
+            widget: "list"
+            fields:
+              - {label: "Image", name: "gallery_image", widget: "image" }
+          - label: "Contact section"
+            name: "contact"
+            widget: "object"
+            fields:
+              - {label: "Twitter Link", name: "contact_twitter", widget: "string" }
+              - {label: "Instagram Link", name: "contact_instagram", widget: "string" }
+              - {label: "Discord Link", name: "contact_discord", widget: "string" }
+              - {label: "Tiktok Link", name: "contact_tiktok", widget: "string" }
+              - {label: "Telegram Link", name: "contact_telegram", widget: "string" }
+              - {label: "Reddit Link", name: "contact_reddit", widget: "string" }
+
+          
+          
+
   - name: "content"
     label: "Content"
+    format: "json"
     extension: "json"
-    files:
-    - label: "Add Site Configuration"
-      name: "content"
-      file: "content/content.json"
-      fields:
-        - { label: "Title", name: "title", widget: "string"}
+    folder: "content"
+    create: true
+    fields:
+      - { label: "Title", name: "n", widget: "string"}
+      - { label: "Label", name: "label", widget: "text", hint: "please add favicon" }
+
+        
+
+
       
 
