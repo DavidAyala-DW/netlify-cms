@@ -329,8 +329,8 @@ function handleInstallFont(mode){
 }
 
 
-function Fonts() {
-
+function Fonts({}) {
+  
   return (
 
     <>

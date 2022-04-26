@@ -1,58 +1,61 @@
 import Head from "next/head";
 import Hero from "../components/Hero";
 import Grid from "../components/Grid";
-import {useEffect, useState} from "react";
+import {useEffect, useState, useContext} from "react";
 import { assignColors } from "../helpers";
 import Contact from "../components/Contact";
 import Main from "../components/Main";
 import About from "../components/About";
 import Carousel from "../components/Carousel";
+import {AppContext} from "../helpers/Context";
 
-const Home = ({featuredProduct,products}) => {
+
+
+const Home = ({featuredProduct,content}) => {
 
   // const [fontNames,setFontNames] = useState(null);
   // const [fontNamesActive,setFontNamesActive] = useState(false);
 
-  useEffect(() => {
-    // setFontNamesActive(true);
-    // setFontNames();
+  const [contentPage, setContentPage] = useContext(AppContext);
+  
+
+  useEffect(() => {    
+    setContentPage(content);
     assignColors();
-  }, []);
+  }, [content,setContentPage]);
 
   return (
     <>
 
       <Head>
-        <title>{process.env.NEXT_PUBLIC_SITE_TITLE}</title>
-        <link rel="shortcut icon" href={`/${process.env.NEXT_PUBLIC_FAVICON}`} />
+        <title>{content.site_title}</title>
+        <link rel="shortcut icon" href={`/${content.site_icon}`} />
       </Head>
       
-      <Hero />
+      <Hero content={content.hero} />
 
-      <Main featuredProduct={featuredProduct}/>
+      <Main content={content.main} featuredProduct={featuredProduct}/>
 
-      <About/>
+      <About content={content.about}/>
       
-      <Carousel/>
+      <Carousel content={content.gallery}/>
 
-      <Contact />
+      <Contact contact={content.contact} />
       
     </>
   );
 
 };
 
-export const getStaticProps = async () => {
+export const getServerSideProps  = async () => {
 
   const endpoint = process.env.NEXT_PUBLIC_API_KEY;
 
-
-
-  async function featuredProduct(){
+  async function featuredProduct(id){
 
     try {
 
-      const res = await fetch(endpoint.toString().concat(`/${process.env.NEXT_PUBLIC_MAIN_FEATURED_PRODUCT ?? "2096389b-aa71-4f03-9cd0-242d6050e964" }`));
+      const res = await fetch(endpoint.toString().concat(`/${id}`));
       const response = await res.json();
       const {error} = response;
       if(error){
@@ -67,18 +70,24 @@ export const getStaticProps = async () => {
     }
 
   }
-  // const dev = process.env.NODE_ENV !== 'production';
-  // const server = dev ? 'http://localhost:3000' : 'https://bitski-netlify-cms.netlify.app';
-  // const req = await fetch(server + "/content/settings.json");
-  // const res = await req.json();
-  // console.log(res);
-    
-  if(process.env.NEXT_PUBLIC_MAIN_FEATURED_PRODUCT){
 
-    const [featured_product] = await Promise.all([featuredProduct()]);
+  const dev = process.env.NODE_ENV !== 'production';
+
+  const server = dev ? 'http://localhost:3000' : 'https://bitski-netlify-cms.netlify.app';
+  const req = await fetch(server + "/settings.json");
+  const res = await req.json();
+  const {main} = res;
+  const {main_featured_product} = main;
+
+
+    
+  if(main_featured_product){
+
+    const [featured_product] = await Promise.all([featuredProduct(main_featured_product)]);
     return {
       props: {
-        featuredProduct: featured_product
+        featuredProduct: featured_product,
+        content: res
       },
     };
 

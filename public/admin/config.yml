@@ -20,13 +20,13 @@ collections:
             fields: 
               - {label: "Wallet Link", name: "navbar_wallet_link", widget: "string"}
               - {label: "Wallet Text", name: "navbar_wallet_text", widget: "string"}
-              - {label: "Logo", name: "navbar_logo", widget: "image"}
           - label: "Hero"
             name: "hero"
             widget: "object"
             fields: 
               - {label: "Hero Title", name: "hero_title", widget: "string"}
               - {label: "Hero Description", name: "hero_description", widget: "string"}
+              - {label: "Logo", name: "hero_logo", widget: "image"}
           - label: "Main Section (Featured Product - NFT)"
             name: "main"
             widget: "object"

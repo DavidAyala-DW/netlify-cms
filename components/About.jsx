@@ -2,6 +2,7 @@ import React from 'react'
 
 const title = process.env.NEXT_PUBLIC_ABOUT_TITLE ?? "";
 const description = process.env.NEXT_PUBLIC_ABOUT_DESCRIPTION ?? "";
+console.log(process.env.NEXT_PUBLIC_ABOUT_DESCRIPTION );
 
 function About() {
   return (

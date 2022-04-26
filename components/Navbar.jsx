@@ -1,25 +1,30 @@
-import {useEffect, useState} from 'react'
+import {useEffect, useState, useContext} from 'react'
 import Image from "next/image";
 import Link from "next/link";
 import MenuHamburger from "../public/menu.svg";
 import CloseMenu from "../public/close.svg";
+import {AppContext} from "../helpers/Context";
 
-
-const logoFileName = "/".concat(process.env.NEXT_PUBLIC_NAVBAR_LOGO);
+const logoFileName = "/".concat(process.env.NEXT_PUBLIC_NAVBAR_LOGO) ?? "";
 
 const Navbar = () => {
+
+  const [contentPage, setContentPage] = useContext(AppContext);
+  const [content, setContent] = useState(contentPage);
 
   const [height, setHeight] = useState(0);
   const [width, setWidth] = useState(0);
   const [isLoadImage, setIsLoadImage] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-
+  
 
   function handleOpenCloseMenu(){
     setMenuOpen(!menuOpen);
   }
 
   useEffect(() => {
+    
+    setContent(contentPage.navbar);
 
     if(logoFileName != "/undefined"){
       
@@ -34,7 +39,7 @@ const Navbar = () => {
       
     }
 
-  }, []);
+  }, [contentPage,setContentPage]);
 
   return (
 
@@ -49,12 +54,12 @@ const Navbar = () => {
             <div className="hidden md:flex">
 
               <a 
-                href={process.env.NEXT_PUBLIC_NAVBAR_WALLET_LINK} 
+                href={content?.navbar_wallet_link} 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-6 buttonShape transition min-w-[160px] hover:scale-105 cursor-pointer bg-primary py-[11px] text-center uppercase text-secondary text-[12px] font-semibold"
               >
-                {process.env.NEXT_PUBLIC_NAVBAR_WALLET_TEXT}
+                {content?.navbar_wallet_text}
               </a>
 
             </div>
