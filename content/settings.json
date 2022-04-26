@@ -1,0 +1,72 @@
+{
+  "contact": {
+    "contact_twitter": "https://twitter.com/PWRFWDteam",
+    "contact_instagram": "https://www.instagram.com/pwrfwdteam/",
+    "contact_discord": "https://discord.gg/a7A8GeDGR7",
+    "contact_tiktok": "/",
+    "contact_telegram": "/",
+    "contact_reddit": "/"
+  },
+  "site_title": "PWRFWD | Charter Jacket NFT | All in on Women's Hoops",
+  "appearance": "dark",
+  "primary_color": "White",
+  "about": {
+    "about_title": "GET YOURS",
+    "about_description": "Premium art. Purposeful benefits. Powerful community. Limited edition. 1,000 available. Holders get:"
+  },
+  "navbar": {
+    "navbar_wallet_link": "https://www.bitski.com/",
+    "navbar_wallet_text": "Log in",
+    "navbar_logo": "img/pwrfwd_logo_web_wht.png"
+  },
+  "local_fonts": {
+    "local_headline": "Interstate",
+    "local_body": "NeueMachina"
+  },
+  "external_fonts": {
+    "external_headline": {
+      "url_headline": "https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap",
+      "fontFamily_headline": "'Manrope', sans-serif"
+    },
+    "external_body": {
+      "url_body": "https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap",
+      "fontFamily_body": "'Manrope', sans-serif"
+    }
+  },
+  "site_icon": "img/favicon-32x32-1.png",
+  "gallery": [
+    {
+      "gallery_image": "img/1.png"
+    },
+    {
+      "gallery_image": "img/2.png"
+    },
+    {
+      "gallery_image": "img/3.png"
+    },
+    {
+      "gallery_image": "img/4.png"
+    },
+    {
+      "gallery_image": "img/5.png"
+    },
+    {
+      "gallery_image": "img/6.png"
+    },
+    {
+      "gallery_image": "img/7.png"
+    },
+    {
+      "gallery_image": "img/8.png"
+    }
+  ],
+  "button_shape": "full",
+  "secondary_color": "black",
+  "main": {
+    "main_featured_product": "d483dffe-e177-43a1-b650-b503e6acd5aa"
+  },
+  "hero": {
+    "hero_title": "CHARTER CLUB JACKET",
+    "hero_description": "Join our community of athletes, fans, and industry leaders and let's go all in on  women's hoops."
+  }
+}
