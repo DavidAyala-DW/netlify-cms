@@ -11,8 +11,11 @@ module.exports = {
   sassOptions: {
 
     prependData: `
+    
     `,
+
   },
+
   webpack: (cfg) => {
     cfg.module.rules.push(
       {
