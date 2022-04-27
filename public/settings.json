@@ -1,12 +1,12 @@
 {
-  "site_title": "Mare is the best",
+  "site_title": "Mare is the best (No, Pablo is the best!)",
   "site_icon": "img/favicon-32x32-1.png",
   "navbar": {
-    "navbar_wallet_link": "https://www.bitski.com/",
-    "navbar_wallet_text": "Log in Test"
+    "navbar_wallet_link": "https://user.bitski.com/login?login_challenge=5fffca62cf43415b89ddd4e451bdbac8&login_hint=null",
+    "navbar_wallet_text": "Sign In"
   },
   "hero": {
-    "hero_title": "Hey Mare!!",
+    "hero_title": "Hey Mare!! Hola, Pablo!",
     "hero_description": "Join our community of athletes, fans, and industry leaders and let's go all in on  women's hoops. Test",
     "hero_logo": "img/pwrfwd_logo_web_wht.png"
   },
